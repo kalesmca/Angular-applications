@@ -1,0 +1,32 @@
+<mat-sidenav-container fullscreen>
+
+    <mat-toolbar color="warn" class="mat-elevation-z6">
+        <div>
+            <mat-menu #appMenu="matMenu" yPosition="below">
+                <button mat-menu-item>Settings</button>
+                <button mat-menu-item>Help</button>
+            </mat-menu>
+
+            <button mat-icon-button [matMenuTriggerFor]="appMenu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+        </div>
+        <span>Sai Blood Bank</span>
+
+    </mat-toolbar>
+    <div class="container">
+        <mat-tab-group animationDuration="0ms">
+            <mat-tab label="Create-Donor">
+                <div class="container">
+                    <app-create-donar></app-create-donar>
+                </div>
+            </mat-tab>
+            <mat-tab label="Donor-List">
+                <div class="container">
+                    <app-donar-list></app-donar-list>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+</mat-sidenav-container>
