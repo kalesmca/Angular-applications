@@ -1,6 +1,16 @@
-<div class="create-container">
-    <app-card [layout]="layoutConfig.layout"></app-card>
+<div class="container">
+
+    <div class="create-container">
+        <app-card [layout]="layoutConfig.layout"></app-card>
+    </div>
+
+    <div class="address-container">
+        <app-card [layout]="layoutConfig.addressLayout"></app-card>
+
+    </div>
+
     <div>
         <button type="button" (click)="save()">Save</button>
     </div>
+
 </div>
