@@ -1,0 +1,47 @@
+<mat-card class="card-container">
+    <mat-card-header>
+        <mat-card-title>{{layout.header}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div *ngFor="let field of layout.fields">
+            <div *ngIf="field.type === 'input'">
+                <ng-container *ngTemplateOutlet="input; context: { $implicit: field }">
+                </ng-container>
+            </div>
+            <div *ngIf="field.type === 'date'">
+                <ng-container *ngTemplateOutlet="date; context: { $implicit: field }">
+                </ng-container>
+            </div>
+            <div *ngIf="field.type === 'dropDown'">
+                <ng-container *ngTemplateOutlet="dropDown; context: { $implicit: field }">
+                </ng-container>
+            </div>
+        </div>
+
+    </mat-card-content>
+</mat-card>
+
+<ng-template #input let-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder={{field.label}} [(ngModel)]="field.model">
+    </mat-form-field>
+</ng-template>
+
+<ng-template #date let-obj>
+    <mat-form-field>
+        <input matInput [(ngModel)]="obj.model" [matDatepicker]="picker" placeholder={{obj.label}}>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+</ng-template>
+
+<ng-template #dropDown let-obj>
+    <mat-form-field>
+        <mat-label>{{obj.label}}</mat-label>
+        <mat-select [(ngModel)]="obj.model">
+            <mat-option *ngFor="let option of obj.options" [value]="option.name">
+                {{option.value}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</ng-template>

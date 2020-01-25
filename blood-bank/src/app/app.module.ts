@@ -10,6 +10,7 @@ import { AppComponent, DialogContentComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
 import { CreateDonarComponent } from './pages/create-donar/create-donar.component';
 import { DonarListComponent } from './pages/donar-list/donar-list.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,7 @@ import { DonarListComponent } from './pages/donar-list/donar-list.component';
     AppMaterialModule,
     BrowserAnimationsModule
   ],
-  declarations: [AppComponent, DialogContentComponent, IndexComponent, CreateDonarComponent, DonarListComponent],
+  declarations: [AppComponent, DialogContentComponent, IndexComponent, CreateDonarComponent, DonarListComponent, CardComponent],
   entryComponents: [DialogContentComponent],
   //bootstrap: [AppComponent],
   bootstrap: [IndexComponent]
