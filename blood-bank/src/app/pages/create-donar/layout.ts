@@ -9,34 +9,40 @@ export class CreateLayout {
                 label: 'Donor Name',
                 type: 'input',
                 value: '',
-                model: ''
+                model: '',
+                dbName: 'donorName'
             },
             {
                 label: 'Donor DOB',
                 type: 'date',
                 value: '',
-                model: ''
+                model: '',
+                dbName: 'donorDOB'
             },
             {
                 label: 'Blood group',
                 type: 'dropDown',
                 value: '',
                 model: '',
-                options: this.donorModel.bloodGroupList
+                options: this.donorModel.bloodGroupList,
+                dbName: 'bloodGroup'
+
             },
             {
                 label: 'Gender',
                 type: 'dropDown',
                 value: '',
                 model: '',
-                options: [{ name: 'male', value: 'Male' }, { name: 'female', value: 'Female' }]
+                options: [{ name: 'male', value: 'Male' }, { name: 'female', value: 'Female' }],
+                dbName: 'donorGender'
             },
 
             {
                 label: 'E-mail',
                 type: 'input',
                 value: '',
-                model: ''
+                model: '',
+                dbName: 'donormailId'
             }
 
         ]
@@ -49,32 +55,37 @@ export class CreateLayout {
                 label: 'place',
                 type: 'input',
                 value: '',
-                model: ''
+                model: '',
+                dbName: 'donorPlace'
             },
             {
                 label: 'city',
                 type: 'input',
                 value: 'city',
-                model: ''
+                model: '',
+                dbName: 'donorCity'
             },
             {
                 label: 'state',
                 type: 'dropDown',
                 value: '',
                 model: '',
-                options: this.donorModel.stateList
+                options: this.donorModel.stateList,
+                dbName: 'donorState'
             },
             {
                 label: 'pincode',
                 type: 'input',
                 value: '',
                 model: '',
+                dbName: 'donorPinCode'
             },
             {
                 label: 'Phone Number',
                 type: 'input',
                 value: '',
-                model: ''
+                model: '',
+                dbName: 'donorPhoneNumber'
             }
 
         ]

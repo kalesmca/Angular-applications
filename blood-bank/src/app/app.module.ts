@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpConfigInterceptor } from './interceptor/httpconfig.interceptor';
 
 import { AppMaterialModule } from './material/app.material.module';
 import { AppComponent, DialogContentComponent } from './app.component';
@@ -17,7 +19,11 @@ import { CardComponent } from './components/card/card.component';
     BrowserModule,
     FormsModule,
     AppMaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
+  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true }
   ],
   declarations: [AppComponent, DialogContentComponent, IndexComponent, CreateDonarComponent, DonarListComponent, CardComponent],
   entryComponents: [DialogContentComponent],
