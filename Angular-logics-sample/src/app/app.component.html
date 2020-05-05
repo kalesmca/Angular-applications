@@ -1,0 +1,80 @@
+<div>
+    app component
+</div>
+
+<div>
+    <ng-template #myRef let-obj>
+        <table>
+            <tr>
+                <td>
+                    myname :: {{obj.name}}
+                </td>
+                <td>Age: {{obj.age}}</td>
+            </tr>
+        </table>
+        
+    </ng-template>
+     <!-- <div *ngFor="let item of tableList">
+     <ng-container *ngTemplateOutlet="myRef; context:{ $implicit: item }"></ng-container>
+    </div>  -->
+
+
+    
+    <table id="customers">
+        
+        <ng-container *ngFor="let item of tableList; index as columnIndex" >
+            <tbody>
+            <tr id="myId-{{columnIndex}}">
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+                <td><button (click)="insert(item)">click</button></td>
+                
+            </tr>
+            <tr *ngIf="item.flag">
+                <td colspan="3">
+                <ng-container *ngTemplateOutlet="myRef; context:{ $implicit: item }"></ng-container>
+                </td>
+            </tr>
+        </tbody>
+
+
+        </ng-container>
+        
+       
+        
+  
+
+    </table>
+
+    <div>
+        <input type="text" [(ngModel)]="myObj.name" />
+        <div><input type="number" [(ngModel)]="myObj.age"/> </div>
+        <div><button (click)="add(myObj)">Add</button></div>
+    </div>
+
+    <div>
+        out
+        <li *ngFor="let item of tableList">
+            <b>{{item.name}}</b>
+
+        </li>
+    </div>
+
+    <!-- <div>
+        parent ::
+        <div>
+            myvalue : <input type="text" [(ngModel)]="obj.qty" />
+        </div>
+        <div>
+            parent output ::{{obj.qty}}
+        </div>
+    </div>
+    <div>
+        Child 
+        <div>
+            <app-child [formData]="obj"></app-child>
+        </div>
+    </div> -->
+    
+
+</div>
